@@ -71,8 +71,8 @@ set writebackup " enable backup files
 set swapfile    " enable swap files (useful when loading huge files)
 
 let s:vimdir=$HOME . "/.vim"
-let &backupdir=s:vimdir . "/backup"  " backups location
-let &directory=s:vimdir . "/tmp"     " swap location
+let &backupdir=s:vimdir . "/backups"  " backups location
+let &directory=s:vimdir . "/swaps"     " swap location
 
 if exists("*mkdir")
   if !isdirectory(s:vimdir)
@@ -152,46 +152,7 @@ if has("gui_running")
   set cursorcolumn  " highlight current column
 endif
 
-if exists("+relativenumber")
-  if v:version >= 400
-    set number
-  endif
-  set relativenumber  " show relative line numbers
-  set numberwidth=3   " narrow number column
-  " cycles between relative / absolute / no numbering
-  if v:version >= 400
-    function! RelativeNumberToggle()
-      if (&number == 1 && &relativenumber == 1)
-        set nonumber
-        set relativenumber relativenumber?
-      elseif (&number == 0 && &relativenumber == 1)
-        set norelativenumber
-        set number number?
-      elseif (&number == 1 && &relativenumber == 0)
-        set norelativenumber
-        set nonumber number?
-      else
-        set number
-        set relativenumber relativenumber?
-      endif
-    endfunc
-  else
-    function! RelativeNumberToggle()
-      if (&relativenumber == 1)
-        set number number?
-      elseif (&number == 1)
-        set nonumber number?
-      else
-        set relativenumber relativenumber?
-      endif
-    endfunc
-  endif
-  nnoremap <silent> <leader>n :call RelativeNumberToggle()<CR>
-else                  " fallback
-  set number          " show line numbers
-  " inverts numbering
-  nnoremap <silent> <leader>n :set number! number?<CR>
-endif
+set number          " show line numbers
 
 set nolist                            " hide unprintable characters
 if has("multi_byte")                  " if multi_byte is available,
@@ -215,7 +176,7 @@ nnoremap <silent> <leader>l :set list! list?<CR>
 set noerrorbells      " shut up
 set visualbell t_vb=  " use visual bell instead of error bell
 set mousehide         " hide mouse pointer when typing
-
+set mouse=a           " Enable mouse in all modes
 if exists("+showtabline")
   set showtabline=1 " only if there are at least two tabs (default)
 endif
