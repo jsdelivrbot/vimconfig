@@ -67,7 +67,7 @@ Make VIM more useful
 
 ## Installation
 ```
-curl http://vim.hmphu.com/install | bash
+curl https://cdn.rawgit.com/hmphu/vimconfig/master/install | bash
 ```
 
 ###  Authors and Contributors
