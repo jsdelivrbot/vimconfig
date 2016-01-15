@@ -1,13 +1,22 @@
-# vimconfig
+# Better VIM
 
-### Step 1: Create some directories
+Make VIM more useful
+
+## Installation
 ```
-mkdir ~/.vim/backups
-mkdir ~/.vim/swaps
-mkdir ~/.vim/undo
+curl http://vim.hmphu.com/install | bash
 ```
 
-### Step 2: Copy .vimrc file to your home dir
-```
-cp ./.vimrc ~/.vimrc
-```
+###  Authors and Contributors
+
+Make with love to VIM.
+
+In 2016, PhuHM ([@hmphu][1]), [http://hmphu.com][2]
+
+###  Support or Contact
+
+Having trouble? [contact me][3]
+
+[1]: https://github.com/hmphu
+[2]: http://www.hnphu.com
+[3]: mailto:me@hmphu.com
