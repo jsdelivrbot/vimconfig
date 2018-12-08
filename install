@@ -4,7 +4,7 @@
 # @Last Modified by:   Phu Hoang
 # @Last Modified time: 2016-01-15 10:51:44
 if [ ! -f "$HOME/.vimrc" ]; then
-    curl -o "$HOME/.vimrc" https://cdn.rawgit.com/hmphu/vimconfig/master/.vimrc
+    curl -o "$HOME/.vimrc" https://cdn.jsdelivr.net/gh/hmphu/vimconfig@master/.vimrc
     echo "You DONE! Have a nice day ;)"
 else
     echo "You already have $HOME/.vimrc config file. Please remove and try again"
